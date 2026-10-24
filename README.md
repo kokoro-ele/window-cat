@@ -1,54 +1,40 @@
 # windowcat
 
-A tiny pixel cat for your Mac windows. Drag it from the menu bar onto a window, then let it walk, nap, or play.
+A little cat. A little company.
 
-**macOS 13+ · Apple Silicon download · English / 日本語 / 简体中文 · Native Swift + AppKit**
+Give your Mac windows a pixel companion. Drag a cat from the menu bar onto a window, and let it wander, curl up for a nap, or chase a ball while you go about your day.
 
-[Download the latest release](https://github.com/kokoro-ele/window-cat/releases/latest) · [中文安装教程](docs/README.zh-CN.md) · [日本語ガイド](docs/README.ja.md) · [Build from source](docs/BUILD.md)
+**macOS 13+ · Apple Silicon · English / 日本語 / 简体中文**
 
-## Install
+[Download windowcat](https://github.com/kokoro-ele/window-cat/releases/latest) · [中文使用指南](docs/README.zh-CN.md) · [日本語ガイド](docs/README.ja.md)
 
-1. Download `windowcat-macOS-arm64.zip` from **Releases**. The prebuilt app supports Apple Silicon (M1 or later). Intel users can build from source.
-2. Unzip and drag **windowcat.app** into **Applications**.
-3. Open the app. Look for the cat in the **top macOS menu bar**. It does not open a main window or show a Dock icon.
-4. This early release is ad-hoc signed, **not Apple-notarized**. If macOS blocks it, first verify that you downloaded it from this repository, then open **System Settings → Privacy & Security → Open Anyway** after attempting to launch. Follow the macOS confirmation. Do not disable Gatekeeper globally. On a managed Mac, your administrator may prohibit this.
+## A home on any window
 
+Hold the cat icon in the top menu bar, drag it onto a window, and release. Your cat stays with that window as you move or resize it.
 
-## Give a window a cat
+![Placing a cat on a window](docs/images/place.png)
 
-1. Open a normal app window, such as Finder or a browser.
-2. **Hold the menu-bar cat icon and drag it onto that window.** A green outline marks the destination.
-3. Release. The cat stays attached to that window and walks along its edges.
-4. Click the menu-bar icon without dragging to open the menu. Choose a cat under the companions menu, then choose a behavior: walk, ball, teaser, or nap.
+## A quiet companion
 
-You can add one cat per window, up to 12. Dropping onto the same window selects its existing cat. Switching apps does not change the target. Cats follow window movement and resizing, hide when the window is minimized or unavailable, and disappear when it closes. Placement is not restored after quitting. Overlays let mouse clicks pass through.
+Let your cat explore the edges, or settle down for a nap. It stays out of the way of your clicks.
 
-The menu also provides pause, speed, automatic naps, removal, language selection, and quit. Language changes apply immediately and are saved. There is no sidebar or demo window in normal use.
+![A cat napping on the window edge](docs/images/nap.png)
 
-## Permissions and privacy
+## A little time to play
 
-Basic placement and tracking need **neither Accessibility nor Screen Recording permission**. The app reads window IDs, process IDs and geometry through macOS APIs. It does not capture screenshots or read document contents. The runtime has no network calls, account, analytics, or third-party code dependencies.
+Choose a ball or teaser from the menu when it's time for a break. Give different windows their own cats, with up to 12 companions at once.
 
-“Enhanced window tracking (optional)” enables Accessibility event notifications. If you choose it, grant access to the current app copy in System Settings → Privacy & Security → Accessibility and restart the app. Without it, geometry polling remains available.
+![A cat playing with a ball](docs/images/play.png)
 
-## Troubleshooting
+*Screenshots use a sample window.*
 
-- **No main window:** expected; use the cat at the top of the screen. If the menu bar is crowded or hidden by a notch, make room for its icon.
-- **No cat yet:** opening the app does not place a cat automatically. Drag from the menu bar to a visible, normal app window.
-- **Cat disappears:** bring its window back into view. Minimized windows, closed windows and occluded edges do not show the cat.
-- **Download cannot be opened:** use the per-app macOS approval above; this release has no Developer ID notarization. Do not change system-wide security settings.
-- **Special window behavior:** Mission Control, Stage Manager, fullscreen windows, multiple displays and system overlays have compatibility limits. Please [open an issue](https://github.com/kokoro-ele/window-cat/issues) with macOS version, Mac model and reproduction steps; avoid posting private window contents.
+## Make yourself at home
 
-## Implementation and verification
+- Walk, nap, play with a ball, or follow a teaser.
+- Adjust walking speed, pause, and turn on automatic naps.
+- Switch between English, Japanese, and Simplified Chinese.
+- Enjoy it offline, with no account required.
 
-AppKit overlays, cached PNG frames and a shared 30 Hz movement clock keep the implementation small. Visible sleeping cats reduce animation updates to 1 Hz. Pausing, locking and display sleep stop updates. Window polling is normally 1 Hz and increases while dragging windows; optional AX notifications improve responsiveness.
+[Get windowcat for Mac →](https://github.com/kokoro-ele/window-cat/releases/latest)
 
-29 core tests cover geometry, movement, window selection, occlusion and localization. Controller integration diagnostics check placement on a real external window, panel visibility and advancing rendered animation. They do **not** automate the complete physical menu-bar drag gesture. Multi-monitor and system UI edge cases are not fully verified.
-
-See [BUILD.md](docs/BUILD.md) for source setup and diagnostics.
-
-## Artwork and source rights
-
-Cat artwork is by [Elthen](https://elthen.itch.io/2d-pixel-art-cat-sprites), under [Elthen’s Common Sense License 1.0](https://www.patreon.com/elthen/posts/licensing-27430241). It is included in the application as part of the product, but **the sprite sheet and generated icon are excluded from this source repository**. Obtain artwork directly from the artist to build locally. Do not extract and redistribute it as an asset pack. See [attribution](Sources/WindowCat/Resources/Elthen/ATTRIBUTION.txt).
-
-The repository publishes source for inspection and local builds. No separate open-source license has been granted for the application code yet; the artwork has its own terms.
+Cat artwork by [Elthen](https://elthen.itch.io/2d-pixel-art-cat-sprites).
