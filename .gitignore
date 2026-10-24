@@ -1,0 +1,10 @@
+.build/
+.swiftpm/
+dist/
+.DS_Store
+
+# Licensed artwork: obtain from the artist, never publish as source assets.
+Sources/WindowCat/Resources/Elthen/Cat.png
+*.icns
+*.iconset/
+*.zip

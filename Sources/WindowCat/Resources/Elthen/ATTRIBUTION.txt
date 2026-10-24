@@ -1,0 +1,16 @@
+2D Pixel Art Cat Sprites by Elthen
+Source: https://elthen.itch.io/2d-pixel-art-cat-sprites
+License: Elthen's Common Sense License 1.0
+License source: https://www.patreon.com/elthen/posts/licensing-27430241
+Acquired: 2026-10-24
+
+Author permits personal/commercial project use and modification.
+The asset itself may not be resold or redistributed; no blockchain/crypto use
+or use for training generative AI/LLMs. Attribution is optional; we credit Elthen.
+This is not CC0 and is not covered by any license on the application code.
+The original Cat.png is used as an application resource, not a standalone asset product.
+Obtain the original asset from the author's page for independent use.
+
+The original 256 x 320 PNG is unchanged. Runtime uses 32 x 32 cells,
+with common baseline-preserving crops and nearest-neighbor display.
+Rows: idle, idle 2, clean, clean 2, walk, run, sleep, paw, jump, scared.
